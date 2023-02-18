@@ -10,7 +10,7 @@ drag camera to player.
 
 play and see.
 
-select player, goto inspector and add another component. physics 2D > box collider
+select player, goto inspector and add another component. physics 2D > box collider 2D
 
 after doing that do copying.
 
