@@ -118,4 +118,8 @@ public class MainMenuController : MonoBehaviour {
   }
 } 
 ```
+when you click, if it pops an error saying game scene can't be loaded. then goto File>Build Setting> tick the scene. Now it should work. Any scene should be available in the Build. 
+
+how to know which player is selected?
+- create a new script `GameManager`
 
