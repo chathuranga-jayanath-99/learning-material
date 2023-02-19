@@ -72,3 +72,50 @@ updates need to be done on the `Player` script.
     }
   }
 ```
+
+# Create Main Menu
+need to create a new scene. under `File` click `New Scene` then click `Basic 2D`. Save it as `MainMenu`. In hierarchy, right click go to `UI`. every UI element must be child of `canvas`. 
+`EventSystem` is there to detect clicking things. 
+
+click `canvas`, tick `canvas` in inspector. `screen space overlay` means it overlays the screen. 
+
+tick `canvas scalar`. change `UI scale mode` to `Scale with screen size`. Change `reference resolution` as needed. in video it is set to 1920x1080. `Match` put to `0.5`. This will change this sizes accordingly for different resolutions. 
+
+`Render mode`, `World Space` is not mainly used in 2D games. 
+
+Select `image` in hierarchy. In appearing window it will indicate it as a `Rect Transform`. Using the left side box (anchor), you set where it need to be anchored.
+
+how to change image?
+- select image in hierarchy. go to inspector. go to image tab. drag and drop the image to `source image`.you can resize it as well. 
+
+you can add UI text as well. You can use that to display game name.
+You can add button as well. 
+
+then create a script `MainMenuController`. inside `MainMenu` in hierarchy, create an empty object `Main Menu Controller`
+
+click button in hierarchy. go to `OnClick` tab click `+`. then for drop down `Runtime Only` drag and drop the `Main Menu Controller`. then go to `No Function` dropdown. then select the function `PlayGame`. then on clikc that function will be executed. 
+
+inside the script. 
+```
+public class MainMenuController : MonoBehaviour {
+  public void PlayGame() {
+    Debug.Log("button pressed");
+  }
+} 
+```
+
+if there are more buttons and one function is attached to all, how to know which button is pressed? 
+- name the game objects in a pattern.
+
+change  `Main Menu Controller` script to move scene.
+```
+...
+using UnityEngine.SceneManagement;
+
+public class MainMenuController : MonoBehaviour {
+  public void PlayGame() {
+    SceneManager.LoadScene("Gameplay");
+  }
+} 
+```
+
